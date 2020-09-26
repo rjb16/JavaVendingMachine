@@ -1,5 +1,6 @@
 package vendingMachine;
 
+import items.CoinType;
 import items.SnackType;
 
 import java.util.ArrayList;
@@ -40,7 +41,51 @@ public class VendingMachine {
         this.inventory = inventory;
     }
 
-    addProductToInventory(SnackType snack){
+    public void addProductToInventory(SnackType snack){
         this.inventory.add(snack);
     }
-}
+
+    public SnackType getSnackTypeByCode(int code){
+        for (SnackType snack : this.inventory){
+            if (snack.getSnackCode() == code ){
+                return snack;
+            }
+        }
+        return null;
+    }
+
+    public SnackType getSnackTypeByPrice(int price) {
+        for (SnackType snack : this.inventory) {
+            if (snack.getSnackPrice() == price){
+                return snack;
+            }
+        }
+        return null;
+    }
+
+    public void paidCoins(CoinType coin) {
+        if (coin.getCoinValue() >= 10) {
+            this.moneyPaid += coin.getCoinValue();
+
+        }
+    }
+
+        public void rejectCoins(CoinType coin){
+            if (coin.getCoinValue() < 10) {
+                this.moneyReturned += coin.getCoinValue();
+            }
+        }
+
+        public SnackType BuySnack(int code){
+       SnackType snack = this.getSnackTypeByCode(code);
+       int price = snack.getSnackPrice();
+       if(this.moneyPaid == price){
+           return snack;
+       }
+       return null;
+        }
+    }
+
+
+
+
