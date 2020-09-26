@@ -2,6 +2,7 @@ import items.CoinType;
 import items.SnackType;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.theories.suppliers.TestedOn;
 import vendingMachine.VendingMachine;
 
 import static org.junit.Assert.assertEquals;
@@ -24,6 +25,10 @@ public class VendingMachineTest {
     @Test
     public void canGetMoneyPaid(){
         assertEquals(0, vendingMachine.getMoneyPaid(), 0.5);
+    }
+    @Test
+    public void canGetMoneyReturned(){
+        assertEquals(0, vendingMachine.getMoneyReturned(), 0.5);
     }
 
 
