@@ -62,6 +62,8 @@ public class VendingMachine {
         }
         return null;
     }
+// NOT SURE IF THIS IS THE BEST WAY TO DO IT CAUSE NOW IM FILTERING
+    // COINS BASED ON THEIR VALUE AND NOT THEIR NAME?
 
     public void paidCoins(CoinType coin) {
         if (coin.getCoinValue() >= 10) {
