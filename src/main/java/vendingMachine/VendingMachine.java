@@ -34,6 +34,7 @@ public class VendingMachine {
         this.moneyReturned = moneyReturned;
     }
 
+    //Changed this to a return statement to reset moneyPaid
     public int setMoneyPaid(int moneyPaid) {
         this.moneyPaid = moneyPaid;
         return moneyPaid;
@@ -79,17 +80,26 @@ public class VendingMachine {
             }
         }
 
+        //TWO WAYS OF TRYING TO RETURN THE MONEY STILL NEEDED,
+    //NOT SURE WHY ITS NOT WORKING
+
         public SnackType BuySnack(int code){
        SnackType snack = this.getSnackTypeByCode(code);
        int price = snack.getSnackPrice();
        if(this.moneyPaid == price){
            return snack;
+       } else {
+               return this.moneyPaid - price;
+           }
        }
-       return null;
-        }
 
-
-
+//        public int returnPriceDifference(int code){
+//        SnackType snack = this.getSnackTypeByCode(code);
+//        int price = snack.getSnackPrice();
+//        if(this.moneyPaid !== price){
+//            return price - moneyPaid;
+//        }
+//        return null;
 
 
     }
