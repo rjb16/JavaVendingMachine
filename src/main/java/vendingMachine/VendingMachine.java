@@ -34,8 +34,9 @@ public class VendingMachine {
         this.moneyReturned = moneyReturned;
     }
 
-    public void setMoneyPaid(int moneyPaid) {
+    public int setMoneyPaid(int moneyPaid) {
         this.moneyPaid = moneyPaid;
+        return moneyPaid;
     }
     public void setInventory(ArrayList<SnackType> inventory){
         this.inventory = inventory;
@@ -86,6 +87,11 @@ public class VendingMachine {
        }
        return null;
         }
+
+
+
+
+
     }
 
 
