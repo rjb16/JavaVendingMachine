@@ -7,11 +7,13 @@ import java.util.ArrayList;
 
 public class VendingMachine {
 
+    private int remainingCost;
     private int moneyPaid;
     private int moneyReturned;
     private ArrayList<SnackType> inventory;
 
     public VendingMachine() {
+        this.remainingCost = 0;
         this.moneyReturned = 0;
         this.moneyPaid = 0;
         this.inventory = new ArrayList<SnackType>();
@@ -101,11 +103,11 @@ public class VendingMachine {
 //        }
 //        return null;
 
-     public int remainingCost(int price){
-        return price - this.moneyPaid;
+     public int remainingCost(){
+        return remainingCost();
      }
 
-    }
+}
 
 
 

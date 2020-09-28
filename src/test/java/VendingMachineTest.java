@@ -70,5 +70,16 @@ public class VendingMachineTest {
         assertEquals(SnackType.COLA, vendingMachine.getSnackTypeByCode(1));
 
     }
+    @Test
+    public void canReturnMoneyStillOwed(){
+        vendingMachine.addProductToInventory(snackType.COLA);
+        vendingMachine.paidCoins(CoinType.TWENTY_PENCE);
+        vendingMachine.paidCoins(CoinType.TWENTY_PENCE);
+        vendingMachine.paidCoins(CoinType.TWENTY_PENCE);
+        vendingMachine.paidCoins(CoinType.TWENTY_PENCE);
+        assertEquals(80, vendingMachine.getMoneyPaid(), 0.1);
+        assertEquals(20, vendingMachine.remainingCost(), 0.1);
+
+    }
 
 }
