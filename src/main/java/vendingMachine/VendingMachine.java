@@ -90,7 +90,7 @@ public class VendingMachine {
 
 
 
-        public SnackType BuySnack(int code) {
+        public SnackType buySnack(int code) {
             SnackType snack = this.getSnackTypeByCode(code);
             int price = snack.getSnackPrice();
             if (this.moneyPaid == price) {

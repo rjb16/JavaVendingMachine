@@ -77,8 +77,10 @@ public class VendingMachineTest {
         vendingMachine.paidCoins(CoinType.TWENTY_PENCE);
         vendingMachine.paidCoins(CoinType.TWENTY_PENCE);
         vendingMachine.paidCoins(CoinType.TWENTY_PENCE);
+        vendingMachine.buySnack(1);
         assertEquals(80, vendingMachine.getMoneyPaid(), 0.1);
         assertEquals(20, vendingMachine.getRemainingCost(), 0.1);
+
 
     }
 
