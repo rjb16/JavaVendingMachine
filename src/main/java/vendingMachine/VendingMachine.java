@@ -34,6 +34,10 @@ public class VendingMachine {
         return inventory.size();
     }
 
+    public int getSoldSnacks() {
+        return soldSnacks.size();
+    }
+
     public void setMoneyReturned(int moneyReturned) {
         this.moneyReturned = moneyReturned;
     }
@@ -90,6 +94,7 @@ public class VendingMachine {
        SnackType snack = this.getSnackTypeByCode(code);
        int price = snack.getSnackPrice();
        if(this.moneyPaid == price){
+
            return snack;
            }
        return null;
