@@ -11,12 +11,14 @@ public class VendingMachine {
     private int moneyPaid;
     private int moneyReturned;
     private ArrayList<SnackType> inventory;
+    private ArrayList<SnackType> soldSnacks;
 
     public VendingMachine() {
         this.remainingCost = 0;
         this.moneyReturned = 0;
         this.moneyPaid = 0;
         this.inventory = new ArrayList<SnackType>();
+        this.soldSnacks = new ArrayList<SnackType>();
 
     }
 
