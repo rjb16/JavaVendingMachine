@@ -80,18 +80,18 @@ public class VendingMachine {
             }
         }
 
-        //TWO WAYS OF TRYING TO RETURN THE MONEY STILL NEEDED,
-    //NOT SURE WHY ITS NOT WORKING
+
 
         public SnackType BuySnack(int code){
        SnackType snack = this.getSnackTypeByCode(code);
        int price = snack.getSnackPrice();
        if(this.moneyPaid == price){
            return snack;
-       } else {
-               return this.moneyPaid - price;
            }
+       return null;
        }
+
+    //Tried to return money still needed in one function but couldnt get it to work
 
 //        public int returnPriceDifference(int code){
 //        SnackType snack = this.getSnackTypeByCode(code);
@@ -101,6 +101,9 @@ public class VendingMachine {
 //        }
 //        return null;
 
+     public int remainingCost(int price){
+        return price - this.moneyPaid;
+     }
 
     }
 
